@@ -7,8 +7,14 @@ import (
 	"os"
 )
 
+type OAuthConfig struct {
+	ID   string
+	Code string
+}
+
 type Config struct {
 	Address string
+	OAuth   OAuthConfig
 }
 
 func LoadConfig(filename string) (conf Config, err error) {
@@ -28,6 +34,7 @@ func main() {
 	if err != nil {
 		log.Fatalln("fail to read config.json:", err)
 	}
+
 	log.Println("listening on", config.Address)
 	log.Fatalln(http.ListenAndServe(config.Address, nil))
 }
