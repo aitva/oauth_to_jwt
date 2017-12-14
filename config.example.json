@@ -1,7 +1,8 @@
 {
-    "Address": ":8080"
+    "Address": ":8080",
     "OAuth": {
-        "ID": "",
-        "Code": ""
+        "ID": "your ID",
+        "Code": "your code",
+        "Redirect": "the URL to your OAuth handler" 
     }
 }
